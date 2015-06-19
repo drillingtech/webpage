@@ -35,7 +35,7 @@ app.use(sessions({
   cookie: {
     path:'/',
   httpOnly: true,
-  domain:'.xxxxxxxxxxxx.xxx'
+  //domain:'.vntrlst.com'
   }
 }));
 
@@ -53,7 +53,7 @@ app.get('*',function(req,res,next){
 
 app.get('*', function(req,res,next) {  
 
-   if(req.headers.host === 'm.xxxxxxxxxxxx.xxx')  //if it's a sub-domain
+   if(req.headers.host === 'm.vntrlst.com')  //if it's a sub-domain
    {req.url = '/m' + req.url; 
     console.log(req.url); //append some text yourself
      next();}
@@ -72,6 +72,7 @@ app.get('/',function(req,res) {
   console.log('----- ON / ROUTE:'+JSON.stringify(req.session));
   var userAgent=req.headers['user-agent'];
   var uacheck = userAgent.indexOf("iPhone") != -1 ;
+  res.send('UNDER CONSTRUCTION');
 });
  
 app.get('/dropplaces',function(req,res){
@@ -159,7 +160,7 @@ app.post('/admax',function(req,res){
   var vlog = req.body.vlog;
   if(pas === vpas && log === vlog) {
     req.session.sKK76d = 'porC6S78x0XZP1b2p08zGlq';
-    res.redirect('http://xxxxxxxxxxxx.xxx/admax');
+    res.redirect('http://vntrlst.com/admax');
   }
   else {
     res.render('adminauth');
@@ -224,20 +225,20 @@ app.post('/drop/users',function(req,res){
       friends.remove({});
      console.log('USERS DB DROPPED FROM '+ req.ip);
      req.session.reset();
-     res.redirect('http://xxxxxxxxxxxx.xxx/admax');}
+     res.redirect('http://vntrlst.com/admax');}
     else {
-      res.redirect('http://xxxxxxxxxxxx.xxx');
+      res.redirect('http://vntrlst.com');
     }
   }
   else {
-    res.redirect('http://xxxxxxxxxxxx.xxx');
+    res.redirect('http://vntrlst.com');
   }
 });
 
 app.post('/admin/1/:uid',function(req,res){
   var pas = req.body.uu;
   if (pas != 'withoutthesecurity') {
-    res.redirect('http://recentones.com');
+    res.redirect('http://vntrlst.com');
   }
   else 
   {var vuid = parseInt(req.params.uid);
@@ -267,7 +268,7 @@ app.post('/admin/insidemsg/remove',function(req,res){
   var vmid = parseInt(req.body.mid);
   var pas = req.body.pas;
   if (pas != 'withoutthesecurity' || !vmid) {
-    res.redirect('http://recentones.com');
+    res.redirect('http://vntrlst.com');
   }
   else 
   { var ms={};
@@ -351,7 +352,7 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(80,'xxx.xxx.xxx.xxx');
+app.listen(80,'188.226.174.110');
 // zero downtime with naught
 if (process.send) process.send('online');
 process.on('message', function(message) {
