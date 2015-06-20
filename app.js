@@ -67,13 +67,15 @@ app.get('*', function(req,res,next) {
 
 
  
-
-app.get('/',function(req,res) {
-  console.log('----- ON / ROUTE:'+JSON.stringify(req.session));
-  var userAgent=req.headers['user-agent'];
-  var uacheck = userAgent.indexOf("iPhone") != -1 ;
-  res.send('UNDER CONSTRUCTION');
+app.get('/',function(req,res){
+  res.render('index');
 });
+//app.get('/',function(req,res) {
+//  console.log('----- ON / ROUTE:'+JSON.stringify(req.session));
+//  var userAgent=req.headers['user-agent'];
+//  var uacheck = userAgent.indexOf("iPhone") != -1 ;
+//  res.send('UNDER CONSTRUCTION');
+//});
  
 app.get('/dropplaces',function(req,res){
   if(req.ip === '188.226.189.180' || req.session.sKK76d === 'porC6S78x0XZP1b2p08zGlq')
