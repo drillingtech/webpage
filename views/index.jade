@@ -7,10 +7,9 @@ head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
     title Интербур
-    |     
-    link(rel='icon', href='/images/vntr5.png', sizes='16x16', type='image/png')
     // Bootstrap
     link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/bootstrap/css/jqvmap.css', rel='stylesheet')
     // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //if lt IE 9
@@ -136,8 +135,11 @@ head
           h1(style='font-family:high;font-size:15vh;text-align:center;text-transform:uppercase;') установками
       .row(style='padding-top:30px;')
          .col-xs-12(style='text-align:center;')
-           button(type='button',style='background-color:#509AFF;color:white;font-family:pr;font-size:30px;') Подать заявку
-             span(class='glyphicon glyphicon-chevron-right')
+           button(type='button',class='btn btn-lg btn-success',style='background-color:#509AFF;color:white;font-family:roboto-thin;font-size:30px;text-transform:uppercase;') Подать заявку
+      .row
+        .col-xs-12(id='vmap' style='height:500px;margin-bottom:100px;')
+
+
 
         //.col-xs-4.col-xs-offset-4
            //img(src='images/interburlogo2.png' style='text-align:center;width:100%;')
@@ -154,4 +156,31 @@ head
       $("#welcome").css("display","none");
       $("body").css("overflow", "auto");
       $('.navbar').css({'position':'fixed','width':'100%'});
+
+      jQuery('#vmap').vectorMap(
+       {
+           map: 'world_en',
+           backgroundColor: '#a5bfdd',
+           borderColor: '#818181',
+           borderOpacity: 0.25,
+           borderWidth: 1,
+           color: '#f4f3f0',
+           enableZoom: true,
+           hoverColor: '#c9dfaf',
+           hoverOpacity: null,
+           normalizeFunction: 'linear',
+           scaleColors: ['#b6d6ff', '#005ace'],
+           selectedColor: '#c9dfaf',
+           selectedRegion: null,
+           showTooltip: true,
+           onRegionClick: function(element, code, region)
+           {
+               var message = 'You clicked "'
+                   + region 
+                   + '" which has the code: '
+                   + code.toUpperCase();
+                    
+               alert(message);
+           }
+       });
       });
