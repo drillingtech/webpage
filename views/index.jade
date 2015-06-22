@@ -155,6 +155,7 @@ head
     script(src="jqvmap/jquery.vmap.sampledata.js")
     script.
       alert('loading the map');
+      jQuery(document).ready(function() {
       $('#vmap').vectorMap(
        {
            map: 'world_en',
@@ -180,6 +181,6 @@ head
                     
                alert(message);
            }
-       });
+       });});
       alert('done');
       
