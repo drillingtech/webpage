@@ -143,16 +143,7 @@ head
       .row
         .col-xs-12(style='height:500px;margin-bottom:100px;')
           #vmap(style='width:500px;height:500px;')
-      script.
-        alert('3!');
-
-
-
-        //.col-xs-4.col-xs-offset-4
-           //img(src='images/interburlogo2.png' style='text-align:center;width:100%;')
-
       
-
 
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
@@ -161,31 +152,31 @@ head
     script(src='js/jquery.vmap.js')
     script.
       alert('loading the map');
-      $('#vmap').vectorMap(
-       {
-           map: 'world_en',
-           backgroundColor: '#a5bfdd',
-           borderColor: '#818181',
-           borderOpacity: 0.25,
-           borderWidth: 1,
-           color: '#f4f3f0',
-           enableZoom: true,
-           hoverColor: '#c9dfaf',
-           hoverOpacity: null,
-           normalizeFunction: 'linear',
-           scaleColors: ['#b6d6ff', '#005ace'],
-           selectedColor: '#c9dfaf',
-           selectedRegion: null,
-           showTooltip: true,
-           onRegionClick: function(element, code, region)
-           {
-               var message = 'You clicked "'
-                   + region 
-                   + '" which has the code: '
-                   + code.toUpperCase();
-                    
-               alert(message);
-           }
-       });
+      //$('#vmap').vectorMap(
+      // {
+      //     map: 'world_en',
+      //     backgroundColor: '#a5bfdd',
+      //     borderColor: '#818181',
+      //     borderOpacity: 0.25,
+      //     borderWidth: 1,
+      //     color: '#f4f3f0',
+      //     enableZoom: true,
+      //     hoverColor: '#c9dfaf',
+      //     hoverOpacity: null,
+      //     normalizeFunction: 'linear',
+      //     scaleColors: ['#b6d6ff', '#005ace'],
+      //     selectedColor: '#c9dfaf',
+      //     selectedRegion: null,
+      //     showTooltip: true,
+      //     onRegionClick: function(element, code, region)
+      //     {
+      //         var message = 'You clicked "'
+      //             + region 
+      //             + '" which has the code: '
+      //             + code.toUpperCase();
+      //              
+      //         alert(message);
+      //     }
+      // });
       alert('done');
       });
