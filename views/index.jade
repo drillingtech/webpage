@@ -53,7 +53,7 @@ head
       color:gray;
       }
       .clck {
-      background-color:#0099E8;
+      background-color:#509AFF;
       -webkit-transition: background-color 0.5s ease;
       -moz-transition: background-color 0.5s ease;
       -o-transition: background-color 0.5s ease;
@@ -115,11 +115,15 @@ head
            
           a.navbar-brand(style='padding-top:5px;', href='#')
             img(src='images/interburlogo.png', height='40', width='40')
-        // Collect the nav links, forms, and other content for toggling
+        // Collect the nav links, forms, and other content for toggling 0099E8
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
-              a(href='#', style='font-family:roboto-thin;font-size:20px;color:white;letter-spacing:2px;text-transform:uppercase;') интербур  
+              a(href='#', style='font-family:roboto-thin;font-size:20px;color:white;letter-spacing:2px;text-transform:uppercase;') интербур 
+            li
+              a(href='/price', style='font-family:roboto-thin;font-size:20px;color:#509AFF;letter-spacing:2px;text-transform:uppercase;') прайс
+            li
+              a(href='/job', style='font-family:roboto-thin;font-size:20px;color:#509AFF;letter-spacing:2px;text-transform:uppercase;') вакансии  
           ul.nav.navbar-nav.navbar-right.clck
             li
               a(href='tel:+74957282212', style='font-family:pr;font-size:20px;color:white;letter-spacing:2px;text-transform:uppercase;') +7 (495) 728-22-12
@@ -127,12 +131,16 @@ head
     .container
       .row(style='padding-top:10vh;')
         .col-xs-12
-          h1(style='font-family:high;font-size:40vh;text-align:center;text-transform:uppercase;') Бурение 
-          h1(style='font-family:high;font-size:40vh;text-align:center;text-transform:uppercase;') малогабаритными
-          h1(style='font-family:high;font-size:40vh;text-align:center;text-transform:uppercase;') установками
-      .row(style='padding-top:10vh;padding-bottom:10vh;')
-        .col-xs-4.col-xs-offset-4
-          img(src='images/interburlogo2.png' style='text-align:center;width:100%;')
+          h1(style='font-family:high;font-size:15vh;text-align:center;text-transform:uppercase;') Бурение 
+          h1(style='font-family:high;font-size:15vh;text-align:center;text-transform:uppercase;') малогабаритными
+          h1(style='font-family:high;font-size:15vh;text-align:center;text-transform:uppercase;') установками
+      .row(style='padding-top:30px;')
+         .col-xs-12(style='text-align:center;')
+           button(type='button',style='background-color:#509AFF;color:white;font-family:pr;font-size:30px;') Подать заявку
+             span(class='glyphicon glyphicon-chevron-right')
+
+        //.col-xs-4.col-xs-offset-4
+           //img(src='images/interburlogo2.png' style='text-align:center;width:100%;')
 
       
 
