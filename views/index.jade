@@ -150,14 +150,14 @@ head
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed
-    script(src='js/bootstrap.min.js')     
+    script(src='js/bootstrap.min.js')
+    script(src='js/jquery.vmap.js')
     script.
       $('#close').click(function(){
       $("#welcome").css("display","none");
       $("body").css("overflow", "auto");
       $('.navbar').css({'position':'fixed','width':'100%'});
-
-      jQuery('#vmap').vectorMap(
+      $('#vmap').vectorMap(
        {
            map: 'world_en',
            backgroundColor: '#a5bfdd',
