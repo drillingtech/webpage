@@ -154,10 +154,7 @@ head
     script(src='js/bootstrap.min.js')
     script(src='js/jquery.vmap.js')
     script.
-      $('#close').click(function(){
-      $("#welcome").css("display","none");
-      $("body").css("overflow", "auto");
-      $('.navbar').css({'position':'fixed','width':'100%'});
+      alert('loading the map');
       $('#vmap').vectorMap(
        {
            map: 'world_en',
