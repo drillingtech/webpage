@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 2540000000 }));
 //  cookie: {
 //    path:'/',
 //  httpOnly: true,
-//  //domain:'.vntrlst.com'
+//  //domain:'.interbur.ru'
 //  }
 //}));
 
@@ -53,7 +53,7 @@ app.get('*',function(req,res,next){
 
 app.get('*', function(req,res,next) {  
 
-   if(req.headers.host === 'm.vntrlst.com')  //if it's a sub-domain
+   if(req.headers.host === 'm.interbur.ru')  //if it's a sub-domain
    {req.url = '/m' + req.url; 
     console.log(req.url); //append some text yourself
      next();}
@@ -162,7 +162,7 @@ app.post('/admax',function(req,res){
   var vlog = req.body.vlog;
   if(pas === vpas && log === vlog) {
     req.session.sKK76d = 'porC6S78x0XZP1b2p08zGlq';
-    res.redirect('http://vntrlst.com/admax');
+    res.redirect('http://interbur.ru/admax');
   }
   else {
     res.render('adminauth');
@@ -227,20 +227,20 @@ app.post('/drop/users',function(req,res){
       friends.remove({});
      console.log('USERS DB DROPPED FROM '+ req.ip);
      req.session.reset();
-     res.redirect('http://vntrlst.com/admax');}
+     res.redirect('http://interbur.ru/admax');}
     else {
-      res.redirect('http://vntrlst.com');
+      res.redirect('http://interbur.ru');
     }
   }
   else {
-    res.redirect('http://vntrlst.com');
+    res.redirect('http://interbur.ru');
   }
 });
 
 app.post('/admin/1/:uid',function(req,res){
   var pas = req.body.uu;
   if (pas != 'withoutthesecurity') {
-    res.redirect('http://vntrlst.com');
+    res.redirect('http://interbur.ru');
   }
   else 
   {var vuid = parseInt(req.params.uid);
@@ -270,7 +270,7 @@ app.post('/admin/insidemsg/remove',function(req,res){
   var vmid = parseInt(req.body.mid);
   var pas = req.body.pas;
   if (pas != 'withoutthesecurity' || !vmid) {
-    res.redirect('http://vntrlst.com');
+    res.redirect('http://interbur.ru');
   }
   else 
   { var ms={};
